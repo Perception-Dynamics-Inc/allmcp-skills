@@ -53,7 +53,8 @@ States can also be added after creation with `yougile_create_string_sticker_stat
 ## Task: create a sprint sticker with sprint windows
 
 **✍** `yougile_create_sprint_sticker(name="Q3 2026", states=[{"name": "Sprint 1",
-"begin": 1751328000000, "end": 1752537600000}])` → `id`.
+"begin": 1782864000000, "end": 1784073600000}])` → `id` — that window is
+1 Jul–15 Jul 2026 UTC in ms-epoch.
 
 `begin` and `end` are ms-epoch. To update sprints, replace the whole `states`
 list via `yougile_update_sprint_sticker(sticker_id=<id>, states=[...])`.
