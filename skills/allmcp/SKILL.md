@@ -70,9 +70,13 @@ If AllMCP tools already appear in your tool list, skip this section.
      keys or secrets; AllMCP owns the consent flow and token refresh.
    - **Basic**: `login="..."` + `password="..."`.
 4. `describe_category(provider_key, category)` — lists that category's tools
-   **and enables them**. Read the returned `skill` field before chaining
-   tools in an unfamiliar category: it is the provider team's own workflow
-   guide (sequencing, unguessable enums, capability boundaries).
+   **and enables them**. The response carries each tool's full input JSON
+   Schema (the exact `tools/list` shape), so you can call or bind the tools
+   immediately without guessing arguments; pass `terse=true` when you only
+   need to see which tools exist (compact arg-type map, roughly a quarter of
+   the payload). Read the returned `skill` field before chaining tools in an
+   unfamiliar category: it is the provider team's own workflow guide
+   (sequencing, unguessable enums, capability boundaries).
 5. Call the provider tools. Names are namespaced
    `{provider_key}_{action}` — `amocrm_list_leads`, `binotel_search_calls_by_phone`.
 
