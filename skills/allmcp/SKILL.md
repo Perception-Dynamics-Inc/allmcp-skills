@@ -8,9 +8,11 @@ description: Drive the AllMCP hub — one MCP endpoint that connects your agent 
 AllMCP is one MCP endpoint that fronts many SaaS providers. You discover
 providers, connect them with the user's credentials (or a one-click OAuth
 link), and then call provider tools like `bitrix24_create_contact` or
-`google_sheets_values_update`. This skill is the platform loop; each provider
-has its own companion skill (`allmcp-bitrix24`, `allmcp-google-sheets`, …)
-with per-category workflow recipes.
+`google_sheets_values_update`. This skill is the platform loop — the only
+thing worth installing. Per-provider workflow guidance is **not** something
+you install: the platform serves it live — `describe_category` returns the
+provider team's expert playbook for a category the moment you open it,
+always in sync with the tools actually deployed.
 
 ## Before anything else
 

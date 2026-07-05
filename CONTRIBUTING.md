@@ -1,37 +1,27 @@
 # Contributing
 
-Thanks for caring about these skills — here's how changes actually land.
+Issues and PRs are welcome — this repo holds the `allmcp` skill and its docs.
 
-## This repo is generated — don't hand-edit skill content
+## Quality bar
 
-Everything under `skills/` is authored, verified against the live AllMCP
-platform, and maintained in the AllMCP backend repository. A sync job exports
-it here whenever the source changes. That means:
+The skill is our public voice to every agent, so every change must hold the
+same discipline:
 
-- **PRs that edit `skills/**` directly will be closed** — not because we don't
-  want the fix, but because the next sync would silently overwrite it.
-- **The right path is an issue.** Report the mistake (wrong tool name, stale
-  enum, missing gotcha, unclear recipe) in
-  [GitHub Issues](https://github.com/Perception-Dynamics-Inc/allmcp-skills/issues).
-  We fix it at the source, re-verify it against the live platform, and the fix
-  syncs back here — usually within a day.
+- **Every fact matches the live platform.** Tool names, auth shapes, quota
+  numbers, and error behavior are verified against production before merge —
+  nothing lands from memory.
+- **No secrets, no internal references.** Placeholder credentials only
+  (`allmcp_...`), public URLs only.
+- **Imperative instructions to the agent, not documentation for humans.**
+  One default per job, boundaries stated explicitly, no option menus.
+- **Pure markdown.** No scripts, nothing executable — installs must stay
+  all-green on security scans.
+- **Lean.** Every line is a recurring token tax in the agent's context.
+  If a fact lives better in the platform's own tool descriptions or
+  `describe_category` playbooks, it doesn't belong here.
 
-## What we gladly take PRs for
+## What to report
 
-- `README.md` improvements (typos, clearer setup steps)
-- Install/agent-compatibility notes
-
-## Quality bar for skill content
-
-Every skill in this repo follows the same discipline before it ships:
-
-- Every tool name, parameter, and enum is verified against the live platform —
-  no facts from memory.
-- Capability boundaries are stated explicitly: a skill never promises an
-  action the platform can't perform.
-- Recipes are written as outcome-first playbooks with realistic data, not API
-  reference dumps.
-- Pure markdown only — no scripts, nothing executes at install time.
-
-If a skill ever contradicts what the platform actually does, that's a bug —
-please file it.
+If an agent following the skill word-for-word fails against the live
+platform, that's the highest-value bug you can file — please include the
+tool calls it made and what came back.
