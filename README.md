@@ -2,9 +2,9 @@
 
 The official [Agent Skill](https://skills.sh) for [AllMCP](https://allmcp.co) — the universal
 integration hub that gives your AI agent one MCP endpoint for CRMs, spreadsheets, ads
-platforms, telephony, restaurants, and project tools.
+platforms, telephony, restaurant platforms, and project tools.
 
-Install into Claude Code, Codex, Cursor, Goose, and 70+ other agents with one command:
+Install into 70+ agents — Claude Code, Codex, Cursor, Goose, and more — with one command:
 
 ```bash
 npx skills add Perception-Dynamics-Inc/allmcp-skills
