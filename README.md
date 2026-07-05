@@ -17,12 +17,16 @@ Pure markdown, no scripts — nothing executes at install time.
 One skill, **`allmcp`**, that teaches your agent the whole platform loop:
 
 - Endpoint setup (`https://go.allmcp.co/mcp/`, `X-API-Key` / Bearer auth, multi-tenant URL params)
-- Discover → connect → unlock → call: `list_providers`, reading `connect_hint`,
-  `connect_provider` for every auth shape (API key, multi-field, OAuth2, basic)
+- All seven system tools — `list_connections`, `list_providers`, `connect_provider`,
+  `describe_category`, `disconnect_provider`, `get_usage`, `report_issue` — and when
+  to reach for each
+- Discover → connect → unlock → call: `list_connections` first for returning users,
+  `list_providers` + reading `connect_hint`, `connect_provider` for every auth shape
+  (API key, multi-field, OAuth2, basic)
 - Why a tool that "doesn't exist" is actually hidden, and how `describe_category`
   (or `?full_catalog=true`) reveals it
 - What each platform error means and what to do about it (`action_required`,
-  needs-reconnecting, rate limits, quota pause)
+  needs-reconnecting, rate limits, quota pause, `report_issue` escalation)
 - Quota etiquette — 20,000 free provider calls a month, discovery always free,
   `get_usage` before heavy jobs
 

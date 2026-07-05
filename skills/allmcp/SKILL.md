@@ -14,6 +14,21 @@ you install: the platform serves it live — `describe_category` returns the
 provider team's expert playbook for a category the moment you open it,
 always in sync with the tools actually deployed.
 
+## The seven system tools
+
+Always visible regardless of which providers are connected; none of them
+count against quota:
+
+| Tool | What it does |
+|---|---|
+| `list_connections()` | The user's active connections, flagging any that need re-auth. **Start here** when the user says "my CRM" — cheaper than the full catalog. |
+| `list_providers()` | Full provider catalog with per-provider connection status; every row carries the `connect_hint` to copy verbatim. |
+| `connect_provider(provider_key, ...)` | Store credentials, or start the OAuth consent flow. |
+| `describe_category(provider_key, category?)` | Inspect a provider's tool catalog; with a `category`, also unlocks its tools and returns each tool's full input schema plus the provider team's workflow playbook. |
+| `disconnect_provider(provider_key)` | Remove a stored connection and hide its tools. |
+| `get_usage()` | Recent call counts by provider + free-tier remainder — check before heavy multi-call jobs. |
+| `report_issue(subject, description)` | File anything genuinely broken straight to the AllMCP team. |
+
 ## Before anything else
 
 - Provider keys are snake_case and must be passed **verbatim**: `bitrix24`,
